@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   post 'home/submit'
   
-  get 'home/read'
+  get 'home/read/:post_id' => "home#read"
   
   get 'home/update/:post_id' => 'home#update'
   

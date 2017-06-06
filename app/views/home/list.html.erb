@@ -2,6 +2,7 @@
     <h1>게시판 글 리스트</h1><br>
     <a class="btn btn-primary" href="/home/create" role="button">글쓰러가기</a><hr>
     <% @every_post.each do |p| %>
+        <a href="/home/read/<%= p.id %>"><%= p.id %>번째 글</a><br>
         <%= p.title %><br>
         <%= p.content %><br>
         <a href="/home/update/<%= p.id %>">[수정]</a>

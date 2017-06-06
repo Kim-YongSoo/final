@@ -13,7 +13,7 @@ class HomeController < ApplicationController
     redirect_to "/home/list"
   end
   def read
-    # @one_post = Post.find(params[:post_id])
+    @one_post = Post.find(params[:post_id])
   end
   
   def list
