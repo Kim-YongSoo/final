@@ -3,6 +3,7 @@ gem 'devise-i18n'
 gem 'devise'
 gem 'cancancan'
 gem 'rolify'
+gem 'rails_12factor', group: :production
 gem 'pg', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
