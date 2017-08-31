@@ -1,19 +1,27 @@
 class HomeController < ApplicationController
+  # load_and_authorize_resource
   def index
+    unless user_signed_in?      
+      redirect_to '/users/sign_in'    
+    end 
   end
 
   def create
   end
   def submit
-    new_post = Post.new
-    new_post.title = params[:title]
-    new_post.content = params[:content]
-    new_post.save
+    # authorize! :write, @new_post
+    @new_post = Post.new
+    @new_post.title = params[:title]
+    @new_post.content = params[:content]
+    @new_post.save
     
     redirect_to "/home/list"
+    
   end
   def read
+    
     @one_post = Post.find(params[:post_id])
+    @comments = Comment.where(:post_id => params[:post_id])
   end
   
   def list

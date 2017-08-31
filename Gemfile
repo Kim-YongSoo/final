@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
-
-
+gem 'devise-i18n'
+gem 'devise'
+gem 'cancancan'
+gem 'rolify'
+gem 'pg', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: :development
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -36,6 +39,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rails_db'
   gem 'byebug'
+  
 end
 
 group :development do

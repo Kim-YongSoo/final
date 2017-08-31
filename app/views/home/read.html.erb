@@ -1,5 +1,30 @@
 <div class="container" style="margin-top: 100px;">
-    <h1><%= @one_post.id %>번째 글 입니다!</h1><hr>
+    <h1><%= @one_post.id %>번째글 </h1><hr>
     <h3>제목 : <%= @one_post.title %></h3>
     <p>내용 : <%= @one_post.content %></p>
+<a class="btn btn-secondary " href="/home/list">목록</a>
+<hr>
+<p>댓글달기</p>
+<form action="/home/read/<%= @one_post.id %>/comments/create" method="post">
+    <input type="text" name="input_comment">
+    <button type="submit" class="btn btn-secondary">작성</button>
+    
+</form>
+<hr>댓글목록
+<table class="table">
+    <tbody>
+<% @comments.each do |comment| %>
+<tr>
+   <th scope="row"> <p><%= comment.content %> 
+    <a  href='/home/read/<%= @one_post.id %>/comments/destroy/<%= comment.id %>' 
+        data-method="post" 
+        data-confirm="삭제합니다">
+        [x]</a>
+    </p></th>
+<%end%>
+ </tr>
+  </tbody>
+</table>
+<hr>
 </div>
+
